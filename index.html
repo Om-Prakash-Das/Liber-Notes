@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liber Notes - Study Materials</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Fuse.js for fuzzy search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Ensure Tailwind uses class strategy for dark mode
+    if (window.tailwind) {
+      tailwind.config = { darkMode: 'class' };
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-yellow-50 to-green-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 bg-fixed text-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <header class="sticky top-0 z-30 bg-blue-900 dark:bg-gray-900 shadow-md py-6 text-center bg-opacity-90 dark:bg-opacity-90">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-book-open-reader text-yellow-400 text-3xl animate-pulse"></i>
+        <span class="text-2xl font-bold tracking-wide">Liber Notes</span>
+      </div>
+      <button id="themeToggle" class="text-yellow-400 text-2xl focus:outline-none" title="Toggle dark/light mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+    <p class="mt-2 text-blue-100 dark:text-yellow-200">Your curated study materials, all in one place.</p>
+    <nav class="mt-4">
+      <a href="#books" class="mx-3 text-yellow-300 dark:text-yellow-300 hover:text-white dark:hover:text-yellow-400 font-semibold transition">Books</a>
+      <a href="#videos" class="mx-3 text-yellow-300 dark:text-yellow-300 hover:text-white dark:hover:text-yellow-400 font-semibold transition">Videos</a>
+      <a href="#notes" class="mx-3 text-yellow-300 dark:text-yellow-300 hover:text-white dark:hover:text-yellow-400 font-semibold transition">Notes</a>
+      <a href="#other" class="mx-3 text-yellow-300 dark:text-yellow-300 hover:text-white dark:hover:text-yellow-400 font-semibold transition">Other</a>
+    </nav>
+  </header>
+  <main class="container mx-auto px-4 relative z-10">
+    <section id="about" class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 mt-10 mb-12 max-w-3xl mx-auto animate-fade-in">
+      <div class="flex flex-col items-center text-center gap-6">
+        <div>
+          <h2 class="text-3xl font-extrabold text-blue-900 dark:text-yellow-400 mb-2 flex items-center gap-2 justify-center animate-bounce"><i class="fa-solid fa-user-graduate text-yellow-400"></i> About Me</h2>
+          <p class="text-lg text-gray-700 dark:text-gray-200 mb-3 animate-fade-in">Hi, I'm <span class="font-semibold text-blue-700 dark:text-yellow-300">Om Prakash Das</span>, a passionate science student at <span class="font-semibold">Ispat Autonomous College, Rourkela</span>. My academic journey began at <span class="font-semibold">Jawahar Navodaya Vidyalaya (JNV)</span>, where I developed a strong foundation in analytical thinking and problem-solving.</p>
+          <ul class="list-disc pl-5 text-gray-700 dark:text-gray-200 mb-3 space-y-1 text-left mx-auto max-w-xl animate-fade-in-up">
+            <li>Currently pursuing Higher Secondary (Intermediate) in Science.</li>
+            <li>Active member of the <span class="font-semibold">Science Club</span> and <span class="font-semibold">IT Club</span>.</li>
+            <li>Completed a project on <span class="text-yellow-500">renewable energy sources</span>.</li>
+            <li>Exploring Information Technology through workshops and self-study.</li>
+            <li>Debate Team & Chess Club participant, enhancing public speaking and strategic thinking.</li>
+            <li>Enjoys reading science fiction, playing chess, and volunteering in community service.</li>
+          </ul>
+          <div class="flex flex-wrap gap-3 mt-4 justify-center animate-fade-in-up">
+            <span class="inline-flex items-center bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 py-1 rounded-full text-sm font-semibold animate-pulse"><i class="fa-solid fa-flask-vial mr-1"></i> Science Enthusiast</span>
+            <span class="inline-flex items-center bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-semibold animate-pulse"><i class="fa-solid fa-laptop-code mr-1"></i> IT Explorer</span>
+            <span class="inline-flex items-center bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-semibold animate-pulse"><i class="fa-solid fa-leaf mr-1"></i> Sustainability Advocate</span>
+            <span class="inline-flex items-center bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-semibold animate-pulse"><i class="fa-solid fa-chess mr-1"></i> Chess Player</span>
+            <span class="inline-flex items-center bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-3 py-1 rounded-full text-sm font-semibold animate-pulse"><i class="fa-solid fa-book-open mr-1"></i> Sci-Fi Reader</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="bg-blue-50 dark:bg-blue-900 rounded-xl p-5 shadow flex flex-col animate-fade-in-up">
+          <h3 class="text-lg font-bold text-blue-800 dark:text-yellow-300 mb-2 flex items-center gap-2"><i class="fa-solid fa-school"></i> Education</h3>
+          <div class="mb-2">
+            <span class="font-semibold">Ispat Autonomous College, Rourkela</span><br/>
+            <span class="text-sm text-gray-600 dark:text-gray-300">Intermediate, Science (Aug 2024 - Mar 2025)</span>
+            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-200 mt-1 text-sm space-y-1">
+              <li>Science Club: Experiments & research projects</li>
+              <li>IT Club: Explored IT through workshops & projects</li>
+              <li>Debate Team: Inter-college competitions</li>
+              <li>Chess Club: Regular tournaments</li>
+            </ul>
+          </div>
+          <div>
+            <span class="font-semibold">PM SHRI Jawahar Navodaya Vidyalaya, Sundargarh</span><br/>
+            <span class="text-sm text-gray-600 dark:text-gray-300">Secondary Education (Apr 2019 - Mar 2024)</span>
+            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-200 mt-1 text-sm space-y-1">
+              <li>Major subjects: Mathematics, Science, Social Studies, English, Odia</li>
+              <li>Project: Renewable energy sources</li>
+              <li>Science club, debate competitions, chess tournaments</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-yellow-50 dark:bg-yellow-900 rounded-xl p-5 shadow flex flex-col animate-fade-in-up">
+          <h3 class="text-lg font-bold text-yellow-800 dark:text-yellow-200 mb-2 flex items-center gap-2"><i class="fa-solid fa-bullseye"></i> Goals & Interests</h3>
+          <ul class="list-disc pl-5 text-gray-700 dark:text-gray-200 text-sm space-y-1">
+            <li>Further education in science and IT</li>
+            <li>Contribute to innovative research projects</li>
+            <li>Connect with professionals and organizations in science & technology</li>
+            <li>Always seeking new challenges and opportunities to learn and grow</li>
+          </ul>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="inline-flex items-center bg-green-200 dark:bg-green-800 text-green-900 dark:text-green-100 px-2 py-1 rounded-full text-xs font-semibold animate-pulse"><i class="fa-solid fa-hands-helping mr-1"></i> Community Service</span>
+            <span class="inline-flex items-center bg-blue-200 dark:bg-blue-800 text-blue-900 dark:text-blue-100 px-2 py-1 rounded-full text-xs font-semibold animate-pulse"><i class="fa-solid fa-microscope mr-1"></i> Research</span>
+            <span class="inline-flex items-center bg-pink-200 dark:bg-pink-800 text-pink-900 dark:text-pink-100 px-2 py-1 rounded-full text-xs font-semibold animate-pulse"><i class="fa-solid fa-users mr-1"></i> Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-8 mb-4 max-w-xl mx-auto">
+      <form class="flex items-center bg-white dark:bg-gray-800 rounded-lg shadow-md w-full sm:w-auto p-2" onsubmit="return false;">
+        <i class="fa-solid fa-magnifying-glass text-gray-400 dark:text-gray-300 mr-2"></i>
+        <input type="text" id="searchInput" class="flex-1 bg-transparent outline-none text-lg px-2 py-1 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400" placeholder="Search study materials..." autocomplete="off" />
+      </form>
+      <select id="categoryFilter" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="">All Categories</option>
+        <option value="Books">Books</option>
+        <option value="Videos">Videos</option>
+        <option value="Notes">Notes</option>
+        <option value="Other">Other</option>
+        <option value="Starred">★ Starred</option>
+      </select>
+    </div>
+    <div id="materials"></div>
+  </main>
+  <button id="scrollTopBtn" class="scroll-top bg-blue-700 hover:bg-yellow-400 hover:text-blue-900 text-white dark:bg-yellow-400 dark:text-blue-900 rounded-full p-3 shadow-lg text-2xl transition" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  <script src="app.js"></script>
+  <script>
+    // Ensure dark mode class is set on html element on page load
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.body.classList.remove('dark');
+      }
+    })();
+  </script>
+</body>
+</html>
