@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liber Notes - Study Materials</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Ensure Tailwind uses class strategy for dark mode
+    if (window.tailwind) {
+      tailwind.config = { darkMode: 'class' };
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-yellow-50 to-green-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 bg-fixed text-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <header class="sticky top-0 z-30 bg-blue-900 dark:bg-gray-900 shadow-md py-6 text-center bg-opacity-90 dark:bg-opacity-90">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-2">
+      <div class="flex items-center gap-3 mb-2 md:mb-0">
+        <i class="fa-solid fa-book-open-reader text-yellow-400 text-3xl animate-pulse"></i>
+        <span class="text-2xl font-bold tracking-wide">Liber Notes</span>
+      </div>
+      <nav class="relative">
+        <ul class="flex flex-wrap gap-2 md:gap-4 items-center justify-center bg-blue-800/80 dark:bg-gray-800/80 rounded-full px-4 py-2 shadow-lg border border-blue-700 dark:border-gray-700">
+          <li><a href="index.html" class="group flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-yellow-300 dark:text-yellow-300 hover:bg-yellow-400/20 hover:text-white dark:hover:text-yellow-400 transition relative"><i class="fa-solid fa-house"></i> <span class="hidden sm:inline">Home</span><span class="absolute left-1/2 -bottom-2 w-0 h-0.5 bg-yellow-400 group-hover:w-3/4 transition-all duration-300 rounded-full"></span></a></li>
+          <li><a href="about.html" class="group flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-yellow-300 dark:text-yellow-300 hover:bg-yellow-400/20 hover:text-white dark:hover:text-yellow-400 transition relative"><i class="fa-solid fa-user"></i> <span class="hidden sm:inline">About</span><span class="absolute left-1/2 -bottom-2 w-0 h-0.5 bg-yellow-400 group-hover:w-3/4 transition-all duration-300 rounded-full"></span></a></li>
+          <li><a href="class11.html" class="group flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-blue-200 dark:text-blue-200 hover:bg-blue-400/20 hover:text-white dark:hover:text-blue-400 transition relative"><i class="fa-solid fa-user-graduate"></i> <span class="hidden sm:inline">Class 11th</span><span class="absolute left-1/2 -bottom-2 w-0 h-0.5 bg-blue-400 group-hover:w-3/4 transition-all duration-300 rounded-full"></span></a></li>
+          <li><a href="class12.html" class="group flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-blue-200 dark:text-blue-200 hover:bg-blue-400/20 hover:text-white dark:hover:text-blue-400 transition relative"><i class="fa-solid fa-user-graduate"></i> <span class="hidden sm:inline">Class 12th</span><span class="absolute left-1/2 -bottom-2 w-0 h-0.5 bg-blue-400 group-hover:w-3/4 transition-all duration-300 rounded-full"></span></a></li>
+          <li><a href="physics.html" class="group flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-purple-200 dark:text-purple-200 hover:bg-purple-400/20 hover:text-white dark:hover:text-purple-400 transition relative"><i class="fa-solid fa-atom"></i> <span class="hidden sm:inline">Physics</span><span class="absolute left-1/2 -bottom-2 w-0 h-0.5 bg-purple-400 group-hover:w-3/4 transition-all duration-300 rounded-full"></span></a></li>
+          <li><a href="chemistry.html" class="group flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-pink-200 dark:text-pink-200 hover:bg-pink-400/20 hover:text-white dark:hover:text-pink-400 transition relative"><i class="fa-solid fa-flask"></i> <span class="hidden sm:inline">Chemistry</span><span class="absolute left-1/2 -bottom-2 w-0 h-0.5 bg-pink-400 group-hover:w-3/4 transition-all duration-300 rounded-full"></span></a></li>
+          <li><a href="general-science.html" class="group flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-green-200 dark:text-green-200 hover:bg-green-400/20 hover:text-white dark:hover:text-green-400 transition relative"><i class="fa-solid fa-flask-vial"></i> <span class="hidden sm:inline">General Science</span><span class="absolute left-1/2 -bottom-2 w-0 h-0.5 bg-green-400 group-hover:w-3/4 transition-all duration-300 rounded-full"></span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="mt-2 text-blue-100 dark:text-yellow-200 text-sm md:text-base font-medium tracking-tight leading-tight max-w-xl mx-auto px-2 rounded-lg bg-blue-900/60 dark:bg-gray-800/70 shadow-sm mt-3 mb-0">
+      Your curated study materials, all in one place.
+    </p>
+  </header>
+  <main class="container mx-auto px-4 relative z-10">
+    <section class="flex flex-col items-center justify-center min-h-[60vh] text-center animate-fade-in">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 dark:text-yellow-400 mb-4 flex items-center gap-3 justify-center"><i class="fa-solid fa-book-open-reader text-yellow-400"></i> Welcome to Liber Notes</h1>
+      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-8 max-w-2xl">A modern, distraction-free hub for free, high-quality study materials curated for Class 11th, Class 12th, Physics, Chemistry, Maths, and General Science. Explore lectures, books, and notes from trusted sources like NCERT and Physics Wallah.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-3xl mt-6">
+        <a href="about.html" class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform duration-200 border-2 border-transparent hover:border-yellow-400">
+          <i class="fa-solid fa-user text-3xl text-yellow-400 mb-2 animate-pulse"></i>
+          <span class="text-lg font-semibold text-blue-900 dark:text-yellow-200">About Me</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400 mt-1">Know the creator</span>
+        </a>
+        <a href="class11.html" class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform duration-200 border-2 border-transparent hover:border-blue-400">
+          <i class="fa-solid fa-user-graduate text-3xl text-blue-400 mb-2 animate-pulse"></i>
+          <span class="text-lg font-semibold text-blue-900 dark:text-blue-200">Class 11th</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400 mt-1">Books, lectures, notes</span>
+        </a>
+        <a href="class12.html" class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform duration-200 border-2 border-transparent hover:border-blue-400">
+          <i class="fa-solid fa-user-graduate text-3xl text-blue-500 mb-2 animate-pulse"></i>
+          <span class="text-lg font-semibold text-blue-900 dark:text-blue-200">Class 12th</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400 mt-1">Books, lectures, notes</span>
+        </a>
+        <a href="physics.html" class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform duration-200 border-2 border-transparent hover:border-purple-400">
+          <i class="fa-solid fa-atom text-3xl text-purple-400 mb-2 animate-pulse"></i>
+          <span class="text-lg font-semibold text-blue-900 dark:text-purple-200">Physics</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400 mt-1">Books, videos, notes</span>
+        </a>
+        <a href="chemistry.html" class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform duration-200 border-2 border-transparent hover:border-pink-400">
+          <i class="fa-solid fa-flask text-3xl text-pink-400 mb-2 animate-pulse"></i>
+          <span class="text-lg font-semibold text-blue-900 dark:text-pink-200">Chemistry</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400 mt-1">Books, videos, notes</span>
+        </a>
+        <a href="general-science.html" class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform duration-200 border-2 border-transparent hover:border-green-400">
+          <i class="fa-solid fa-flask-vial text-3xl text-green-400 mb-2 animate-pulse"></i>
+          <span class="text-lg font-semibold text-blue-900 dark:text-green-200">General Science</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400 mt-1">Books, videos, notes</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="w-full text-center py-6 text-gray-500 dark:text-gray-400 text-sm mt-8">
+    <span class="font-bold text-yellow-500 dark:text-yellow-300 tracking-wide animate-pulse">&copy; 2025 Liber Notes</span>
+    <span class="mx-2">|</span>
+    <span class="italic text-blue-700 dark:text-blue-200">Empowering your learning journey!</span>
+  </footer>
+  <script src="app.js"></script>
+  <script>
+    // Only apply dark theme, no theme button needed
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.className = 'bg-gray-900 text-gray-100 transition-colors duration-300';
+      document.documentElement.classList.add('dark');
+    });
+  </script>
+</body>
+</html>
