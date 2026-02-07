@@ -118,7 +118,7 @@ function renderMaterials(filter = '', category = '') {
       filtered.forEach(m => {
         const starred = isStarred(m.title);
         html += `<div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 flex flex-col min-h-[180px] transition hover:scale-105 hover:shadow-xl relative">
-          <button class="star-btn absolute top-3 right-3 ${starred ? 'filled' : ''}" title="Star this material" onclick="toggleStar('${m.title.replace(/'/g, "\\'")}')">
+          <button class="star-btn absolute top-3 right-3 ${starred ? 'filled' : ''}" title="Star this material" onclick="toggleStar('${m.title.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}')">
             <i class="fa${starred ? 's' : 'r'} fa-star"></i>
           </button>
           <div class="flex items-center gap-2 mb-2">
